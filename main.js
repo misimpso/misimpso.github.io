@@ -368,7 +368,7 @@ $(document).ready(function() {
                     '<option' + (sort_mode == 'lands' ? ' selected': '') + '>Number of Lands</option>';
         
         mode_sel.addEventListener('change', function(d) {
-            if($('#sel1 option:selected').html() == "Alphebetical") {
+            if($('#sel1 option:selected').html() == "Alphabetical") {
                 sort_mode = 'alpha';
                 showDefault();
             } else if($('#sel1 option:selected').html() == "Number of Lands") {
@@ -516,7 +516,7 @@ $(document).ready(function() {
                     '<option' + (sort_mode == 'lands' ? ' selected': '') + '>Number of Lands</option>';
 
         mode_sel.addEventListener('change', function(d) {
-            if($('#sel1 option:selected').html() == "Alphebetical") {
+            if($('#sel1 option:selected').html() == "Alphabetical") {
                 sort_mode = 'alpha';
                 showClans(county);
             } else if($('#sel1 option:selected').html() == "Number of Lands") {
