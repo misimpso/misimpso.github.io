@@ -679,7 +679,8 @@ $(document).ready(function() {
         back.setAttribute('id', 'back-button');
         back.innerHTML = "<span><strong><< Back</strong></span>";
         back.addEventListener('click', function(d) {
-            if($('.selected')[0].id != null) {
+			console.log($('.selected').length);
+            if($('.selected').length) {
                 return showClans($('.selected')[0].id)
             } 
             return showDefault();
