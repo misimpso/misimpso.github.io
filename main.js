@@ -22,8 +22,10 @@ $(document).ready(function() {
     };
     
     console.log(clans);
+	var co = 0;
     var all_lands = {"000": {"num": 0, "clans": []}};
     for(clan in clans) {
+		co++;
         if(clans[clan]["Lands"] != null) {
             var lands = clans[clan]["Lands"].split(/\s*,\s*/);
             for(var i = 0; i < lands.length; i++) {
@@ -40,6 +42,7 @@ $(document).ready(function() {
         }
     }
     console.log(all_lands);
+	console.log(co);
     
     var tartans_wo_clans = [];
     for(var x = 0; x < tartans.length; x++) {
