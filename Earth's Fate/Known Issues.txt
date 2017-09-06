@@ -1,0 +1,15 @@
+Fixed: 
+Game seems to skip ahead several years right at the start.
+After evoking a disaster, evoking the same disaster while the sound is not playing will not play or repeat its sound.
+Leveling up seems very slow for some reason.
+Level up bar now moved to right side of screen. 
+GUI changed to accomodate new level up bar
+Red balloon procedural text generation still needs to be finished.
+Hovering over an advisor will cause the border around one of the disasters to be drawn slightly thicker.
+
+To Do:
+After playing for a while and handling all of the balloons, only green balloons were appearing.
+Clicking all of the green balloons available quickly makes the damage you take 0.
+Their are two different systems for increasing production over time. I have disabled mine for the time being.
+Game moves too fast to read balloons without pausing. We may want to reduce game speed.
+Many areas of code have inconsistent indentation or could use additional commenting.

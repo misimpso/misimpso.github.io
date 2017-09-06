@@ -1,0 +1,7 @@
+@font-face {
+   font-family: 'Geometos Rounded';
+   src:
+      local('Geometos Rounded'),
+      url('assets/fonts/Geometos Rounded.ttf')
+      format('truetype');
+}
