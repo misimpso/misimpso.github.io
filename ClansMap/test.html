@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>Scotland's Clans by District</title>
+        <!-- Bootstrap core CSS -->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+        
+        <link rel="stylesheet" href="style.css">
+    </head>
+	<body>
+		<script src="clans6.js"></script>
+		<script src="tartans.js"></script>
+		<script src="https://d3js.org/d3.v3.min.js"></script>
+        <script src="https://d3js.org/topojson.v1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="typeahead.bundle.js"></script>
+		<script>
+			$(document).ready(function() {
+				console.log(clans);
+				var all_lands = {"000": {"num": 0, "clans": []}};
+				for(clan in clans) {
+					if(clans[clan]["Lands"] != null) {
+						var lands = clans[clan]["Lands"].split(/\s*,\s*/);
+						for(var i = 0; i < lands.length; i++) {
+							if(!(lands[i] in all_lands)) {
+								all_lands[lands[i]] = {"num": 1, "clans": [clan]};
+							} else {
+								all_lands[lands[i]]["num"]++;
+								all_lands[lands[i]]["clans"].push(clan);
+							}
+						}
+					} else {
+						all_lands["000"]["num"]++;
+						all_lands["000"]["clans"].push(clan);
+					}
+				}
+				console.log(all_lands);
+				
+				var tartans_wo_clans = [];
+				var twc = {};
+				for(var x = 0; x < tartans.length; x++) {
+					if(typeof tartans[x] == "object") {
+						if(!(Object.keys(tartans[x])[0] in clans)) {
+							twc[Object.keys(tartans[x])[0]] = {
+								"Origin": null,
+								"Tartan_Image": [],
+								"Lands": null,
+								"Gaelic_Name": null,
+								"Crest_Image": null,
+								"Origin_Time": null,
+								"Motto": null,
+								"Crest": null
+							}
+							tartans_wo_clans.push(Object.keys(tartans[x])[0]);
+						}
+					}
+				}
+				//console.log(tartans_wo_clans);
+				//$(document.body).html(JSON.stringify(twc));
+			});
+		</script>
+	</body>
+	
+</html>
