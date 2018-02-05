@@ -1,0 +1,26 @@
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~
+	Michael Simpson
+	2/4/18
+	mikeysimpson4@gmail.com
+~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+@font-face {
+	font-family: Lato; 
+	src: url('../fonts/Lato/Lato-Regular.ttf') format("truetype");
+}
+
+@font-face {
+	font-family: Lato-Bold;
+	font-weight: bold;
+	src: url('../fonts/Lato/Lato-Bold.ttf') format("truetype");
+}
+
+@font-face {
+	font-family: Raleway;
+	src: url('../fonts/Raleway/Raleway-Regular.ttf') format("truetype");
+}
+
+@font-face {
+	font-family: Raleway-Medium;
+	src: url('../fonts/Raleway/Raleway-Medium.ttf') format("truetype");
+}
