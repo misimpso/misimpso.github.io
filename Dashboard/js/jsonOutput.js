@@ -1,0 +1,1 @@
+[{"date": "5/4/2018", "inspector": "SG/RD", "total": 30.0, "prcntg": 0.16666666666666666, "defects": 5.0}]

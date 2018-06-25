@@ -1,0 +1,76 @@
+#svg-holder {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+#barGraph {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.input-daterange > .form-control {
+    width: 100px;
+}
+
+.bar-tooltip {
+    position: absolute;
+    border: 1px solid black;
+    display: block;
+    visibility: hidden;
+    
+}
+
+.prcntext {
+    fill: white;
+    font-weight: 5px bold;
+}
+
+.input-text-override {
+    border-radius: 0;
+    margin: 0 -1px;
+}
+
+#trendSwitch {
+    margin: 0;
+}
+
+.left-axis > path, .left-axis > .tick > line{
+    stroke-width: 2px;
+    stroke: #007bff;
+}
+
+.right-axis > path, .right-axis > .tick > line{
+    stroke-width: 2px;
+    stroke: #dc3545;
+}
+
+.hidden {
+    display: none;
+}
+
+.bootstrap-select {
+    width: 200px;
+}
+
+.bootstrap-select > button {
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+}
+
+.dropdown-menu {
+    padding: 0;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    background-color: #eee8;
+}
+
+.bs-actionsbox {
+    background-color: rgb(68, 1, 84);
+}

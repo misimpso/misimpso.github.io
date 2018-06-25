@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html land="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Dashboard</title>
+        <meta name="description" content="Dashboard">
+        
+        <link rel="stylesheet" href="css/dashboard.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+        <link rel="stylesheet" href="css/bootstrap-select.min.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    
+    <body>
+        <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+            <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">QA Dashboard</a>
+        </nav>
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                    <div class="sidebar-sticky">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">
+                                <span data-feather="home"></span>
+                                Dashboard <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                <span data-feather="file"></span>
+                                Orders
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                <span data-feather="shopping-cart"></span>
+                                Products
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                <span data-feather="users"></span>
+                                Customers
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                <span data-feather="bar-chart-2"></span>
+                                Reports
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                <span data-feather="layers"></span>
+                                Integrations
+                                </a>
+                            </li>
+                        </ul>
+                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                            <span>Saved reports</span>
+                            <a class="d-flex align-items-center text-muted" href="#">
+                            <span data-feather="plus-circle"></span>
+                            </a>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                            <span data-feather="file-text"></span>
+                            Current month
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                            <span data-feather="file-text"></span>
+                            Last quarter
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                            <span data-feather="file-text"></span>
+                            Social engagement
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                            <span data-feather="file-text"></span>
+                            Year-end sale
+                            </a>
+                        </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2">Dashboard</h1>
+                        
+                        <!-- Calendar Input -->
+                        
+                        <div class="input-daterange input-group mb-2 mb-md-0 w-auto" id="datepicker">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text">Dates</label>
+                            </div>
+                            <input id="datepicker1" type="text" class="form-control input" name="start"/>
+                            <label class="input-group-text input-text-override">to</label>
+                            <input id="datepicker2" type="text" class="form-control input" name="end" />
+                        </div>
+                        
+                        <!-- Defect Code Switch -->
+                        
+                        <div class="input-group mb-2 mb-md-0 w-auto">
+                            <div id="defectSwitch" class="input-group-prepend mb-1 mb-md-0 w-auto">
+                                <button class="btn btn-outline-secondary">Defect Code Detailed</button>
+                            </div>
+                            <div id="trendSwitch" class="input-group-append mb-1 mb-md-0 w-auto">
+                                <button class="btn btn-outline-secondary">Trend View</button>
+                            </div>
+                            
+                        </div>
+                        
+                        <!-- Defect Code Tool Bar -->
+                        
+                        <div id="defectToolbar" class="input-group mb-3 mb-md-0 w-auto hidden">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text">Defect Codes</label>
+                            </div>
+                            <select class="selectpicker" data-style="btn-outline-secondary" multiple data-actions-box="true">
+                            </select>
+
+                        </div>
+                        
+                        <!-- Bar Graph Tool Bar -->
+                        
+                        <div id="barGraphToolbar" class="input-group mb-2 mb-md-0 w-auto">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text">Sort By</label>
+                            </div>
+                            <select id="dropdownSelectSort">
+                                <option value="Da" selected>Date</option>
+                                <option value="PD">% Defective</option>
+                                <option value="In">Inspector</option>
+                            </select>
+                            <div class="input-group-append btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-outline-secondary active">
+                                    <input class="direction-radio-input" type="radio" name="sortMethod" value="sort-down"><i class="fas fa-sort-amount-up" data-fa-transform="rotate--90; flip-h"></i>
+                                </label>
+                                <label class="btn btn-outline-secondary">
+                                    <input class="direction-radio-input" type="radio" name="sortMethod" value="sort-up"><i class="fas fa-sort-amount-down" data-fa-transform="rotate--90"></i>
+                                </label>
+                            </div>
+                            <div class="input-group-append btn-group-toggle" data-toggle="buttons">
+                                <label class="color-sort btn btn-outline-primary active text-input-override" title="Blue Column Sort">
+                                    <input class="color-radio-input" type="radio" name="colorSortMethod" value="left"><span><strong>L</strong></span>
+                                </label>
+                                <label class="color-sort btn btn-outline-danger" title="Red Column Sort">
+                                    <input class="color-radio-input" type="radio" name="colorSortMethod" value="right"><span><strong>R</strong></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="svg-holder"/>
+                </main>
+            </div>
+        </div>
+        
+        
+        
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        <script src="js/bootstrap-datepicker.min.js"></script>
+        <script src="js/bootstrap-select.min.js"></script>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="js/jsonOutput.js"></script>
+        <script src="js/grapher.js"></script>
+    </body>
+</html>
