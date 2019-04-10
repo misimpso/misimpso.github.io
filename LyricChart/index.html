@@ -27,12 +27,22 @@
     <!-- Add your site or application content here -->
     
     <main class="container">
-        <div id="title">
-            <h1>Lyrics Chart</h1>
-            <hr>
-        </div>    
-        <div id="content" class="container">
-            <canvas id="canvas" width=700px height=700px></canvas>
+        <div class="row">
+            <div id="sidebar" class="col-md-3">
+                <h3>Lyrics</h3>
+                <p></p>
+                <textarea id="lyrics-text"></textarea>
+                <div class="btn-group btn-group-md btn-group-block" role="group">
+                    <button id="chart_btn" type="button" class="btn btn-secondary">Chartify</button>
+                    <button id="clear_btn" type="button" class="btn btn-outline-danger">Clear</button>
+                </div>
+                <div class="btn-group-vertical btn-group-md btn-group-block" role="group">
+                    <button data-id="ex-1" type="button" class="btn btn-outline-primary">Example 1</button>
+                    <button data-id="ex-2" type="button" class="btn btn-outline-primary">Example 2</button>
+                    <button data-id="ex-3" type="button" class="btn btn-outline-primary">Example 3</button>
+                </div>
+            </div>
+            <div id="content" class="col-md-9"></div>
         </div>
     </main>
     
@@ -41,13 +51,254 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
-
-    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID.
     <script>
-        window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-        ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+    $(document).ready(() => {
+        
+        let content_h = Math.min($('#content').width(), $('body').height()) - 16 + "px";
+        
+        $('#content').html($('<canvas id="canvas" width=' + content_h + ' height=' + content_h + '>'));
+        
+        make_chart();
+        
+    });
+        
+    $('#chart_btn').on('click', make_chart);
+        
+    $('#clear_btn').on('click', () => { $('#sidebar > p').text(''); $('textarea').val(''); make_chart(); })
+        
+    $('.btn-group-vertical > button').on('click', (e) => {
+        
+        let e_id = e.target.getAttribute('data-id');
+        
+        let ttl = null;
+        
+        let lyr = null;
+        
+        if (e_id == "ex-1") {
+            
+            ttl = "September - Earth, Wind, and Fire";
+            
+            lyr = `Do you remember the 21st night of September?
+Love was changing the minds of pretenders
+While chasing the clouds away
+Our hearts were ringing
+In the key that our souls were singing
+As we danced in the night
+Remember how the stars stole the night away
+Hey hey hey
+Ba de ya, say do you remember
+Ba de ya, dancing in September
+Ba de ya, never was a cloudy day
+Ba duda, ba duda, ba duda, badu
+Ba duda, badu, ba duda, badu
+Ba duda, badu, ba duda
+My thoughts are with you
+Holding hands with your heart to see you
+Only blue talk and love
+Remember how we knew love was here to stay
+Now December found the love that we shared in September
+Only blue talk and love
+Remember the true love we share today
+Hey hey hey
+Ba de ya, say do you remember
+Ba de ya, dancing in September
+Ba de ya, never was a cloudy day
+There was a
+Ba de ya, say do you remember
+Ba de ya, dancing in September
+Ba de ya, golden dreams were shinny days
+The bell was ringing
+Our souls were singing
+Do you remember, never a cloudy day
+There was a
+Ba de ya, say do you remember
+Ba de ya, dancing in September
+Ba de ya, never was a cloudy day
+There was a
+Ba de ya, say do you remember
+Ba de ya, dancing in September
+Ba de ya, golden dreams were shinny days
+Ba de ya de ya de ya
+Ba de ya de ya de ya
+Ba de ya de ya de ya de ya
+Ba de ya de ya de ya
+Ba de ya de ya de ya
+Ba de ya de ya de ya de ya`;
+            
+        } else if (e_id == "ex-2") {
+            
+            ttl = "Mr. Blue Sky - Electric Light Orchestra"
+            
+            lyr = `Sun is shinin' in the sky
+There ain't a cloud in sight
+It's stopped rainin' everybody's in a play
+And don't you know
+It's a beautiful new day, hey hey
+Runnin' down the avenue
+See how the sun shines brightly in the city
+On the streets where once was pity
+Mister blue sky is living here today, hey hey
+Mister blue sky please tell us why
+You had to hide away for so long (so long)
+Where did we go wrong?
+Mister blue sky please tell us why
+You had to hide away for so long (so long)
+Where did we go wrong?
+Hey you with the pretty face
+Welcome to the human race
+A celebration, mister blue sky's up there waitin'
+And today is the day we've waited for
+Oh mister blue sky please tell us why
+You had to hide away for so long (so long)
+Where did we go wrong?
+Hey there mister blue
+We're so pleased to be with you
+Look around see what you do
+Everybody smiles at you
+Hey there mister blue
+We're so pleased to be with you
+Look around see what you do
+Everybody smiles at you
+Mister blue sky, mister blue sky
+Mister blue sky
+Mister blue, you did it right
+But soon comes mister night creepin' over
+Now his hand is on your shoulder
+Never mind I'll remember you this
+I'll remember you this way
+Mister blue sky please tell us why
+You had to hide away for so long (so long)
+Where did we go wrong?
+Hey there mister blue
+We're so pleased to be with you
+Look around see what you do
+Everybody smiles at you
+Mister blue sky`;
+            
+        } else if (e_id == 'ex-3') {
+            
+            ttl = "This is America - Childish Gambino";
+            
+            lyr = `Yeah, yeah, yeah, yeah, yeah
+Yeah, yeah, yeah, go, go away
+Yeah, yeah, yeah, yeah, yeah
+Yeah, yeah, yeah, go, go away
+Yeah, yeah, yeah, yeah, yeah
+Yeah, yeah, yeah, go, go away
+Yeah, yeah, yeah, yeah, yeah
+Yeah, yeah, yeah, go, go away
+We just wanna party
+Party just for you
+We just want the money
+Money just for you
+I know you wanna party
+Party just for me
+Girl, you got me dancin' (yeah, girl, you got me dancin')
+Dance and shake the frame
+We just wanna party (yeah)
+Party just for you (yeah)
+We just want the money (yeah)
+Money just for you (you)
+I know you wanna party (yeah)
+Party just for me (yeah)
+Girl, you got me dancin' (yeah, girl, you got me dancin')
+Dance and shake the frame (you)
+This is America
+Don't catch you slippin' up
+Don't catch you slippin' up
+Look what I'm whippin' up
+This is America (woo)
+Don't catch you slippin' up
+Don't catch you slippin' up
+Look what I'm whippin' up
+This is America (skrrt, skrrt, woo)
+Don't catch you slippin' up (ayy)
+Look at how I'm livin' now
+Police be trippin' now (woo)
+Yeah, this is America (woo, ayy)
+Guns in my area (word, my area)
+I got the strap (ayy, ayy)
+I gotta carry 'em
+Yeah, yeah, I'ma go into this (ugh)
+Yeah, yeah, this is guerilla (woo)
+Yeah, yeah, I'ma go get the bag
+Yeah, yeah, or I'ma get the pad
+Yeah, yeah, I'm so cold like yeah (yeah)
+I'm so dope like yeah (woo)
+We gon' blow like yeah (straight up, uh)
+Ooh-ooh-ooh-ooh-ooh, tell somebody
+You go tell somebody
+Grandma told me
+Get your money, black man (get your money)
+Get your money, black man (get your money)
+Get your money, black man (get your, black man)
+Get your money, black man (get your, black man)
+Black man
+This is America (woo, ayy)
+Don't catch you slippin' up (woo, woo, don't catch you slippin', now)
+Don't catch you slippin' up (ayy, woah)
+Look what I'm whippin' up (Slime!)
+This is America (yeah, yeah)
+Don't catch you slippin' up (woah, ayy)
+Don't catch you slippin' up (ayy, woo)
+Look what I'm whippin' up (ayy)
+Look how I'm geekin' out (hey)
+I'm so fitted (I'm so fitted, woo)
+I'm on Gucci (I'm on Gucci)
+I'm so pretty (yeah, yeah)
+I'm gon' get it (ayy, I'm gon' get it)
+Watch me move (blaow)
+This a celly (ha)
+That's a tool (yeah)
+On my Kodak (woo, Black)
+Ooh, know that (yeah, know that, hold on)
+Get it (get it, get it)
+Ooh, work it (21)
+Hunnid bands, hunnid bands, hunnid bands (hunnid bands)
+Contraband, contraband, contraband (contraband)
+I got the plug on Oaxaca (woah)
+They gonna find you like blocka (blaow)
+Ooh-ooh-ooh-ooh-ooh, tell somebody
+America, I just checked my following list and
+You go tell somebody
+You mothafuckas owe me
+Grandma told me
+Get your money, black man (black man)
+Get your money, black man (black man)
+Get your money, black man (black man)
+Get your money, black man (black man)
+Black man (one, two, three, get down)
+Ooh-ooh-ooh-ooh-ooh, tell somebody
+You go tell somebody
+Grandma told me, "Get your money, " black man
+Get your money, black man (black man)
+Get your money, black man (black man)
+Get your money, black man (black man)
+Black man
+You just a black man in this world
+You just a barcode, ayy
+You just a black man in this world
+Drivin' expensive foreigns, ayy
+You just a big dawg, yeah
+I kenneled him in the backyard
+No proper life to a dog
+For a big dog`;
+            
+        }
+        
+        if (lyr !== null) {
+            
+            $('#sidebar > p').text(ttl);
+            
+            $('textarea').val(lyr);
+            
+            make_chart();
+            
+        }
+        
+    });
+    
     </script>
-    <script src="https://www.google-analytics.com/analytics.js" async defer></script>-->
 </body>
 
 </html>

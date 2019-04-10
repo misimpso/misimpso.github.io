@@ -103,27 +103,63 @@ textarea {
 body {
     
     background-color: dimgrey;
+    padding: 0;
+    min-height: 100vh;
+    padding: .5em 0;
+    
 }
 
 main {
+    
     background-color: white;
-    padding: .5em 0;
-    margin: .5em 0;
-    height: 98vh;
+    
 }
 
-#title > h1 {
-    margin: 0;
-}
 
 hr {
+    
     margin: .5em;
 }
 
-canvas {
-    position: relative;
-    left: 50%;
-    transform: translate(-50%, 0);
+
+#sidebar {
+    
+    border-right: .5em solid dimgrey;
+    padding: .5em;
+    
+}
+
+#sidebar > .btn-group, #sidebar > .btn-group-vertical {
+    
+    width: 100%;
+    
+    padding: 0 0 .5em 0;
+    
+}
+
+#sidebar > p {
+    
+    font-size: 10px;
+    margin-bottom: 0;
+}
+
+.btn-group :first-child {
+    
+    width: 75%;
+    
+}
+
+textarea {
+    
+    width: 100%;
+    min-height: 40%;
+    
+}
+
+#content {
+    
+    text-align: center;
+    
 }
 
 
