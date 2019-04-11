@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Lyric Chart</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -29,17 +29,21 @@
     <main class="container">
         <div class="row">
             <div id="sidebar" class="col-md-3">
-                <h3>Lyrics</h3>
-                <p></p>
-                <textarea id="lyrics-text"></textarea>
-                <div class="btn-group btn-group-md btn-group-block" role="group">
-                    <button id="chart_btn" type="button" class="btn btn-secondary">Chartify</button>
-                    <button id="clear_btn" type="button" class="btn btn-outline-danger">Clear</button>
+                <div id="sidebar-title">
+                    <h3>LYRICS</h3>
+                    <p></p>
                 </div>
-                <div class="btn-group-vertical btn-group-md btn-group-block" role="group">
-                    <button data-id="ex-1" type="button" class="btn btn-outline-primary">Example 1</button>
-                    <button data-id="ex-2" type="button" class="btn btn-outline-primary">Example 2</button>
-                    <button data-id="ex-3" type="button" class="btn btn-outline-primary">Example 3</button>
+                <div id="sidebar-content">
+                    <textarea id="lyrics-text"></textarea>
+                    <div class="btn-group btn-group-md btn-group-block" role="group">
+                        <button id="chart_btn" type="button" class="btn btn-secondary">Chartify</button>
+                        <button id="clear_btn" type="button" class="btn btn-outline-danger">Clear</button>
+                    </div>
+                    <div class="btn-group-vertical btn-group-md btn-group-block" role="group">
+                        <button data-id="ex-1" type="button" class="btn btn-outline-primary">Example 1</button>
+                        <button data-id="ex-2" type="button" class="btn btn-outline-primary">Example 2</button>
+                        <button data-id="ex-3" type="button" class="btn btn-outline-primary">Example 3</button>
+                    </div>
                 </div>
             </div>
             <div id="content" class="col-md-9"></div>
