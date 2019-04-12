@@ -16,8 +16,12 @@ function make_chart() {
         }
 
     });
+
+    ctx.fillStyle = "white";
+
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
     
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "black";
     
     if (lyrics_list.length == 1) return;
 

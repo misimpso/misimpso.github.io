@@ -85,41 +85,80 @@ textarea {
   src: url("../fonts/Gobold.otf"); }
 
 body {
-  background-color: dimgrey;
+  background-color: #798086;
   padding: 0;
   min-height: 100vh;
   padding: .5em 0; }
-  body main {
-    background-color: white; }
-    body main #sidebar {
-      padding: 0.5em; }
-      body main #sidebar #sidebar-title {
-        border: .2em solid dimgrey;
-        border-radius: 5px;
-        height: 8%;
-        margin-bottom: 0.5em;
+  body main .row {
+    height: 95vh; }
+    body main .row #sidebar {
+      background-color: #37393c;
+      padding: 0.3em .3em .1em .3em;
+      border-radius: 5px 0 0 5px; }
+      body main .row #sidebar #sidebar-title {
+        border: 2.3px solid #b1b1b2;
+        border-radius: 5px 0 0 0;
+        height: 7%;
+        margin-bottom: 0.2em;
         clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%); }
-        body main #sidebar #sidebar-title h3 {
+        body main .row #sidebar #sidebar-title h3 {
           font-family: Gobold;
-          text-align: center;
-          color: white;
-          font-size: 4em;
+          text-align: right;
+          margin-right: .3em;
+          font-size: 3.5em;
           line-height: 70%;
-          -webkit-text-stroke: 3px dimgrey; }
-        body main #sidebar #sidebar-title p {
-          font-size: 10px;
-          margin-bottom: 0; }
-      body main #sidebar #sidebar-content #lyrics-text {
-        width: 100%;
-        min-height: 40%; }
-      body main #sidebar #sidebar-content .btn-group, body main #sidebar #sidebar-content .btn-group-vertical {
-        width: 100%;
-        padding: 0 0 .5em 0; }
-        body main #sidebar #sidebar-content .btn-group #chart_btn, body main #sidebar #sidebar-content .btn-group-vertical #chart_btn {
-          width: 75%; }
-    body main #content {
+          -webkit-text-stroke: 2.3px #b1b1b2; }
+        body main .row #sidebar #sidebar-title #sidebar-buttons-holder {
+          position: relative; }
+          body main .row #sidebar #sidebar-title #sidebar-buttons-holder div {
+            position: absolute;
+            height: 4em;
+            width: 5px;
+            margin-top: -0.5em;
+            transform: skew(-13deg); }
+            body main .row #sidebar #sidebar-title #sidebar-buttons-holder div:nth-child(0) {
+              left: 0px; }
+            body main .row #sidebar #sidebar-title #sidebar-buttons-holder div:nth-child(1) {
+              left: 10px; }
+            body main .row #sidebar #sidebar-title #sidebar-buttons-holder div:nth-child(2) {
+              left: 20px; }
+            body main .row #sidebar #sidebar-title #sidebar-buttons-holder div:nth-child(3) {
+              left: 30px; }
+            body main .row #sidebar #sidebar-title #sidebar-buttons-holder div:nth-child(4) {
+              left: 40px; }
+            body main .row #sidebar #sidebar-title #sidebar-buttons-holder div:nth-child(1) {
+              background: red; }
+            body main .row #sidebar #sidebar-title #sidebar-buttons-holder div:nth-child(2) {
+              background: orange; }
+            body main .row #sidebar #sidebar-title #sidebar-buttons-holder div:nth-child(3) {
+              background: green; }
+            body main .row #sidebar #sidebar-title #sidebar-buttons-holder div:nth-child(4) {
+              background: blue; }
+      body main .row #sidebar #sidebar-content {
+        padding: 5px;
+        border: 2.3px solid #b1b1b2;
+        border-radius: 0 0 5px 5px;
+        height: 92%; }
+        body main .row #sidebar #sidebar-content p {
+          font-size: 13px;
+          font-style: oblique;
+          margin-bottom: 2px;
+          color: #c3c3c4; }
+        body main .row #sidebar #sidebar-content #lyrics-text {
+          width: 100%;
+          min-height: 15vh;
+          height: 70%; }
+        body main .row #sidebar #sidebar-content .btn-group, body main .row #sidebar #sidebar-content .btn-group-vertical {
+          width: 100%;
+          padding: 0 0 .5em 0; }
+          body main .row #sidebar #sidebar-content .btn-group #chart_btn, body main .row #sidebar #sidebar-content .btn-group-vertical #chart_btn {
+            width: 75%; }
+    body main .row #content {
       text-align: center;
-      border-left: 0.5em solid dimgrey; }
+      border-left: 0.5em solid #798086;
+      background-color: #37393c; }
+      body main .row #content canvas {
+        margin: 15px 0; }
 
 /* ==========================================================================
    Helper classes

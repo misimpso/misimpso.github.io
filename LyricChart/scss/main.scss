@@ -98,87 +98,157 @@ textarea {
  /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+$red-primary: red;
+$orange-primary: orange;
+$green-primary: green;
+$blue-primary: blue;
 
-@font-face { font-family: Gobold; src: url('../fonts/Gobold.otf'); } 
+$blue-secondary: #1f4b7a;
+
+$dim-grey-primary: #37393c;
+$dim-grey-secondary:#b1b1b2;
+$dim-grey-background : rgb(121, 128, 134);
+
+@font-face { font-family: Gobold; src: url('../fonts/Gobold.otf'); }
+
+@function shade($color, $percentage) {
+    @return mix(black, $color, $percentage);
+  }
+
+@mixin transition {
+
+    @for $i from 0 through 4 {
+        
+        &:nth-child(#{$i}) {
+
+            left: #{($i * 10)}px;
+
+        }
+
+    }
+
+}
 
 body {
     
-    background-color: dimgrey;
+    background-color: $dim-grey-background;
     padding: 0;
     min-height: 100vh;
     padding: .5em 0;
 
     main {
-    
-        background-color: white;
 
-        #sidebar {
+        .row {
 
-            padding: 0.5em;
+            height: 95vh;
 
-            #sidebar-title {
+            #sidebar {
 
-                border: .2em solid dimgrey;
-                border-radius: 5px;
-                height: 8%;
-                margin-bottom: 0.5em;
-                clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
+                background-color: $dim-grey-primary;
+                padding: 0.3em .3em .1em .3em;
+                border-radius: 5px 0 0 5px;
 
-                h3 {
+                #sidebar-title {
 
-                    font-family: Gobold;
-                    text-align: center;
-                    color: white;
-                    font-size: 4em;
-                    line-height: 70%;
-                    -webkit-text-stroke: 3px dimgrey;
-                }
+                    border: 2.3px solid $dim-grey-secondary;
+                    border-radius: 5px 0 0 0;
+                    height: 7%;
+                    margin-bottom: 0.2em;
+                    clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
 
-                p {
+                    h3 {
 
-                    font-size: 10px;
-                    margin-bottom: 0;
-    
-                }
+                        font-family: Gobold;
+                        text-align: right;
+                        margin-right: .3em;
+                        font-size: 3.5em;
+                        line-height: 70%;
+                        -webkit-text-stroke: 2.3px $dim-grey-secondary;
+                    }
 
-            }
+                    #sidebar-buttons-holder {
 
-            #sidebar-content {
+                        position: relative;
+                        
+                        div {
 
-                #lyrics-text {
-        
-                    width: 100%;
-                    min-height: 40%;
-                    
-                }
+                            @include transition;
+                            position: absolute;
+                            height: 4em;
+                            width: 5px;
+                            margin-top:-0.5em;
+                            transform: skew(-13deg);
 
-                .btn-group, .btn-group-vertical {
-                
-                    #chart_btn {
+                            $colors-list: $red-primary $orange-primary $green-primary $blue-primary;
+                            @each $current-color in $colors-list {
+                                $i: index($colors-list, $current-color);
+                                &:nth-child(#{$i}) {
+                                    background: $current-color;
+                                }
+                            }
 
-                        width: 75%;
+                        }
 
                     }
 
-                    width: 100%;
+                }
 
-                    padding: 0 0 .5em 0;
+                #sidebar-content {
+
+                    padding: 5px;
+                    border: 2.3px solid $dim-grey-secondary;
+                    border-radius: 0 0 5px 5px;
+                    height: 92%;
+
+                    p {
+
+                        font-size: 13px;
+                        font-style: oblique;
+                        margin-bottom: 2px;
+                        color: lighten($dim-grey-secondary, 7%);
+        
+                    }
+
+                    #lyrics-text {
+            
+                        width: 100%;
+                        min-height: 15vh;
+                        height: 70%;
+                        
+                    }
+
+                    .btn-group, .btn-group-vertical {
+                    
+                        #chart_btn {
+
+                            width: 75%;
+
+                        }
+
+                        width: 100%;
+                        padding: 0 0 .5em 0;
+
+                    }
+                    
+                }
+                
+            }
+
+            #content {
+        
+                text-align: center;
+                border-left: 0.5em solid $dim-grey-background;
+                background-color: $dim-grey-primary;
+
+                canvas {
+                    
+                    margin: 15px 0;
 
                 }
                 
             }
-            
-        }
-
-        #content {
-    
-            text-align: center;
-
-            border-left: 0.5em solid dimgrey;
-            
         }
     }
-    
 }
 
  /* ==========================================================================
