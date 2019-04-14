@@ -152,7 +152,6 @@ body {
 
                     border: 2.3px solid $dim-grey-secondary;
                     border-radius: 5px 0 0 0;
-                    height: 7%;
                     margin-bottom: 0.2em;
                     clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
 
@@ -160,9 +159,10 @@ body {
 
                         font-family: Gobold;
                         text-align: right;
-                        margin-right: .3em;
+                        margin: 3% .3em 3% 0;
                         font-size: 3.5em;
-                        line-height: 70%;
+                        line-height: 50%;
+
                         -webkit-text-stroke: 2.3px $dim-grey-secondary;
                     }
 
@@ -241,7 +241,7 @@ body {
                 background-color: $dim-grey-primary;
 
                 canvas {
-                    
+
                     margin: 15px 0;
 
                 }

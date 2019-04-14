@@ -98,15 +98,14 @@ body {
       body main .row #sidebar #sidebar-title {
         border: 2.3px solid #b1b1b2;
         border-radius: 5px 0 0 0;
-        height: 7%;
         margin-bottom: 0.2em;
         clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%); }
         body main .row #sidebar #sidebar-title h3 {
           font-family: Gobold;
           text-align: right;
-          margin-right: .3em;
+          margin: 3% .3em 3% 0;
           font-size: 3.5em;
-          line-height: 70%;
+          line-height: 50%;
           -webkit-text-stroke: 2.3px #b1b1b2; }
         body main .row #sidebar #sidebar-title #sidebar-buttons-holder {
           position: relative; }
