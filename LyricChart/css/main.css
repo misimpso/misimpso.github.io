@@ -123,6 +123,7 @@ body {
         clip-path: polygon(0% 0%, 0% 101%, 101% 100%, 100% 0%); }
         body main .row #sidebar #sidebar-title h3 {
           font-family: Gobold;
+          color: #37393c;
           text-align: right;
           margin: 3% .3em 2.7% 0;
           font-size: 3.8em;
