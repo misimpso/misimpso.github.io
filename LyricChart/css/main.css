@@ -96,9 +96,26 @@ body {
       padding: 0.3em .3em .1em .3em;
       border-radius: 5px 0 0 5px; }
       body main .row #sidebar .btn {
-        border-color: white; }
+        font-weight: bold;
+        background-color: #37393c; }
         body main .row #sidebar .btn.btn-primary {
-          background-color: #42acc7; }
+          color: #42acc7;
+          border-color: #42acc7; }
+          body main .row #sidebar .btn.btn-primary:hover {
+            color: #37393c;
+            background-color: #42acc7; }
+        body main .row #sidebar .btn.btn-secondary {
+          border-color: #b1b1b2;
+          color: #b1b1b2; }
+          body main .row #sidebar .btn.btn-secondary:hover {
+            color: #37393c;
+            background-color: #b1b1b2; }
+        body main .row #sidebar .btn.btn-danger {
+          border-color: #e81f1f;
+          color: #e81f1f; }
+          body main .row #sidebar .btn.btn-danger:hover {
+            color: #37393c;
+            background-color: #e81f1f; }
       body main .row #sidebar #sidebar-title {
         border: 2.3px solid #b1b1b2;
         border-radius: 5px 0 0 0;
