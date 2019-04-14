@@ -95,6 +95,10 @@ body {
       background-color: #37393c;
       padding: 0.3em .3em .1em .3em;
       border-radius: 5px 0 0 5px; }
+      body main .row #sidebar .btn {
+        border-color: white; }
+        body main .row #sidebar .btn.btn-primary {
+          background-color: #42acc7; }
       body main .row #sidebar #sidebar-title {
         border: 2.3px solid #b1b1b2;
         border-radius: 5px 0 0 0;
@@ -126,13 +130,13 @@ body {
             body main .row #sidebar #sidebar-title #sidebar-buttons-holder div:nth-child(4) {
               left: 40px; }
             body main .row #sidebar #sidebar-title #sidebar-buttons-holder div:nth-child(1) {
-              background: red; }
+              background: #e81f1f; }
             body main .row #sidebar #sidebar-title #sidebar-buttons-holder div:nth-child(2) {
-              background: orange; }
+              background: #e8941e; }
             body main .row #sidebar #sidebar-title #sidebar-buttons-holder div:nth-child(3) {
-              background: green; }
+              background: #51c742; }
             body main .row #sidebar #sidebar-title #sidebar-buttons-holder div:nth-child(4) {
-              background: blue; }
+              background: #42acc7; }
       body main .row #sidebar #sidebar-content {
         padding: 5px;
         border: 2.3px solid #b1b1b2;

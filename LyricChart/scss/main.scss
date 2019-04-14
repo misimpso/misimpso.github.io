@@ -98,10 +98,10 @@ textarea {
  /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-$red-primary: red;
-$orange-primary: orange;
-$green-primary: green;
-$blue-primary: blue;
+$red-primary: #e81f1f;
+$orange-primary: #e8941e;
+$green-primary: #51c742;
+$blue-primary: #42acc7;
 
 $blue-secondary: #1f4b7a;
 
@@ -124,9 +124,7 @@ $dim-grey-background : rgb(121, 128, 134);
             left: #{($i * 10)}px;
 
         }
-
     }
-
 }
 
 body {
@@ -147,6 +145,16 @@ body {
                 background-color: $dim-grey-primary;
                 padding: 0.3em .3em .1em .3em;
                 border-radius: 5px 0 0 5px;
+
+                .btn {
+                    border-color: white;
+
+                    &.btn-primary {
+                        
+                        background-color: $blue-primary;
+    
+                    }
+                }
 
                 #sidebar-title {
 
@@ -186,11 +194,8 @@ body {
                                     background: $current-color;
                                 }
                             }
-
                         }
-
                     }
-
                 }
 
                 #sidebar-content {
@@ -229,9 +234,7 @@ body {
                         padding: 0 0 .5em 0;
 
                     }
-                    
                 }
-                
             }
 
             #content {
@@ -244,8 +247,7 @@ body {
 
                     margin: 15px 0;
 
-                }
-                
+                } 
             }
         }
     }
