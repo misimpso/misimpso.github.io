@@ -28,7 +28,7 @@
     
     <main class="container">
         <div class="row">
-            <div id="sidebar" class="col-md-3">
+            <div id="sidebar">
                 <div id="sidebar-title">
                     <div id="sidebar-buttons-holder">
                         <div></div>
@@ -42,7 +42,7 @@
                     <p>Type lyrics in the box below.</p>
                     <textarea id="lyrics-text"></textarea>
                     <div class="btn-group btn-group-md btn-group-block" role="group">
-                        <button id="chart_btn" type="button" class="btn btn-secondary">Chartify</button>
+                        <button id="chart_btn" type="button" class="btn btn-success">Chartify</button>
                         <button id="clear_btn" type="button" class="btn btn-danger">Clear</button>
                     </div>
                     <div class="btn-group-vertical btn-group-md btn-group-block" role="group">
@@ -52,7 +52,7 @@
                     </div>
                 </div>
             </div>
-            <div id="content" class="col-md-9"></div>
+            <div id="content"></div>
         </div>
     </main>
     
@@ -64,7 +64,7 @@
     <script>
     $(document).ready(() => {
         
-        let content_h = Math.min($('#content').width(), $('.row').height()) - 30 + "px";
+        let content_h = $('#content').height() - 20 + "px";
         
         $('#content').html($('<canvas id="canvas" width=' + content_h + ' height=' + content_h + '>'));
         

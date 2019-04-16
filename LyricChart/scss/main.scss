@@ -130,22 +130,29 @@ $dim-grey-background : rgb(121, 128, 134);
 body {
     
     background-color: $dim-grey-background;
-    padding: 0;
-    min-height: 100vh;
-    padding: .5em 0;
+    width: 100vw;
 
-    main {
+    .container {
+
+        padding: 0;
+        margin: 1vh auto;
+        max-width: calc(20vw + 98vh);
 
         .row {
 
-            height: 95vh;
+            margin: 0;
 
             #sidebar {
 
                 background-color: $dim-grey-primary;
-                padding: 0.3em .3em .1em .3em;
+                padding: 0.3em 0.3em 0.3em 0.3em;
                 border-radius: 5px 0 0 5px;
+                width: 25%;
 
+                .btn-group-block {
+                    
+                    width: 100%;
+                }
 
                 .btn {
 
@@ -167,7 +174,6 @@ body {
                             background-color: $blue-primary;
 
                         }
-
                     }
 
                     &.btn-secondary {
@@ -183,6 +189,23 @@ body {
 
                             // Secondary varient
                             background-color: $dim-grey-secondary;
+                            
+                        }
+                    }
+
+                    &.btn-success {
+
+                        // Secondary varient
+                        border-color: $green-primary;
+                        color: $green-primary;
+
+                        &:hover {
+
+                            // Constant
+                            color: $dim-grey-primary;
+
+                            // Secondary varient
+                            background-color: $green-primary;
                             
                         }
                     }
@@ -249,16 +272,20 @@ body {
 
                 #sidebar-content {
 
-                    padding: 5px;
+                    padding: 0.3em;
                     border: 2.3px solid $dim-grey-secondary;
                     border-radius: 0 0 5px 5px;
-                    height: 92%;
+                    height: calc(98vh - 3.9em);
+
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
 
                     p {
 
                         font-size: 13px;
                         font-style: oblique;
-                        margin-bottom: 2px;
+                        margin-bottom: 0.3em;
                         color: lighten($dim-grey-secondary, 7%);
         
                     }
@@ -267,36 +294,35 @@ body {
             
                         width: 100%;
                         min-height: 15vh;
-                        height: 70%;
-                        
+                        height: 100%;
+                        margin-bottom: 0.3em;
+
                     }
 
-                    .btn-group, .btn-group-vertical {
-                    
-                        #chart_btn {
+                    #chart_btn {
 
-                            width: 75%;
+                        width: 75%;
 
-                        }
+                    }
 
-                        width: 100%;
-                        padding: 0 0 .5em 0;
+                    .btn-group {
+                        margin-bottom: 0.3em;
 
                     }
                 }
             }
 
             #content {
-        
-                text-align: center;
-                border-left: 0.5em solid $dim-grey-background;
+
+                border-left: 0.25em solid $dim-grey-background;
                 background-color: $dim-grey-primary;
+                width: 98vh;
+                border-radius: 0 5px 5px 0;
 
                 canvas {
+                    margin: 0.5rem;
 
-                    margin: 15px 0;
-
-                } 
+                }
             }
         }
     }
