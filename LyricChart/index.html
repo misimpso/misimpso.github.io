@@ -64,10 +64,10 @@
     <script>
     $(document).ready(() => {
         
-        let content_h = $('#content').height() - 20 + "px";
+        let content_h = $('#content').height() + "px";
         
         $('#content').html($('<canvas id="canvas" width=' + content_h + ' height=' + content_h + '>'));
-        
+    
         make_chart();
         
     });

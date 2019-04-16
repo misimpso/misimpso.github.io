@@ -135,12 +135,16 @@ body {
     .container {
 
         padding: 0;
-        margin: 1vh auto;
         max-width: calc(20vw + 98vh);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
 
         .row {
 
             margin: 0;
+            width: calc(20vw + 98vh + 0.5em);
 
             #sidebar {
 
@@ -314,15 +318,12 @@ body {
 
             #content {
 
-                border-left: 0.25em solid $dim-grey-background;
+                margin-left:0.25rem;
                 background-color: $dim-grey-primary;
                 width: 98vh;
                 border-radius: 0 5px 5px 0;
+                padding: 0.5rem;
 
-                canvas {
-                    margin: 0.5rem;
-
-                }
             }
         }
     }
