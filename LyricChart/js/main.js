@@ -29,6 +29,24 @@ function make_chart() {
     
     const w = (canvas.width - (padding * 2)) / lyrics_list.length;
 
+
+    if (padding > 8) {
+
+        /* for(let u = 0; u < 2; u++) {
+
+            ctx.beginPath();
+            ctx.moveTo((padding - 5) + ((canvas.width - (padding * 2)) * u), padding - 5);
+            ctx.lineTo(canvas.width - padding + 5, (padding - 5) + ((canvas.width - (padding * 2)) * u));
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(padding - 5, padding - 5);
+            ctx.lineTo(padding - 5, canvas.width - padding + 5);
+            ctx.stroke();
+
+        } */
+    }
+
     /*
     let position = null;
     for (let i = 0; i <= lyrics_list.length; i++) {

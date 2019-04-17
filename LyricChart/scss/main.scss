@@ -135,7 +135,7 @@ body {
     .container {
 
         padding: 0;
-        max-width: calc(20vw + 98vh);
+        max-width: calc(20vw + 100vh);
         position: absolute;
         left: 50%;
         top: 50%;
@@ -144,7 +144,6 @@ body {
         .row {
 
             margin: 0;
-            width: calc(20vw + 98vh + 0.5em);
 
             #sidebar {
 
@@ -318,11 +317,10 @@ body {
 
             #content {
 
-                margin-left:0.25rem;
+                margin-left: -1px;
                 background-color: $dim-grey-primary;
-                width: 98vh;
                 border-radius: 0 5px 5px 0;
-                padding: 0.5rem;
+                padding: 0.4rem 0.4rem 0.4rem 0.1rem;
 
             }
         }

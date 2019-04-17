@@ -89,14 +89,13 @@ body {
   width: 100vw; }
   body .container {
     padding: 0;
-    max-width: calc(20vw + 98vh);
+    max-width: calc(20vw + 100vh);
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%); }
     body .container .row {
-      margin: 0;
-      width: calc(20vw + 98vh + 0.5em); }
+      margin: 0; }
       body .container .row #sidebar {
         background-color: #37393c;
         padding: 0.3em 0.3em 0.3em 0.3em;
@@ -193,11 +192,10 @@ body {
           body .container .row #sidebar #sidebar-content .btn-group {
             margin-bottom: 0.3em; }
       body .container .row #content {
-        margin-left: 0.25rem;
+        margin-left: -1px;
         background-color: #37393c;
-        width: 98vh;
         border-radius: 0 5px 5px 0;
-        padding: 0.5rem; }
+        padding: 0.4rem 0.4rem 0.4rem 0.1rem; }
 
 /* ==========================================================================
    Helper classes
