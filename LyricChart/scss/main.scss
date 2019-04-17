@@ -243,7 +243,7 @@ body {
                         color: $dim-grey-primary;
                         text-align: right;
                         margin: 3% .3em 2.7% 0;
-                        font-size: 3.8em;
+                        font-size: 6vh;
                         line-height: 50%;
 
                         -webkit-text-stroke: 2.3px $dim-grey-secondary;
@@ -257,7 +257,7 @@ body {
 
                             @include transition;
                             position: absolute;
-                            height: 4em;
+                            height: 6vh;
                             width: 5px;
                             margin-top:-0.5em;
                             transform: skew(-13deg);
