@@ -144,23 +144,33 @@ body {
             line-height: 50%;
             -webkit-text-stroke: 2.3px #b1b1b2; }
           body .container .row #sidebar #sidebar-title #sidebar-buttons-holder {
-            position: relative; }
+            position: absolute;
+            transform: rotate(-78deg); }
             body .container .row #sidebar #sidebar-title #sidebar-buttons-holder div {
-              position: absolute;
-              height: 6vh;
-              width: 5px;
-              margin-top: -0.5em;
-              transform: skew(-13deg); }
+              height: 0.5vh;
+              width: 10vh;
+              margin-bottom: 0.5vh;
+              transition: height 0.5s; }
               body .container .row #sidebar #sidebar-title #sidebar-buttons-holder div:nth-child(0) {
                 left: 0px; }
+              body .container .row #sidebar #sidebar-title #sidebar-buttons-holder div:hover {
+                height: 1.5vh; }
               body .container .row #sidebar #sidebar-title #sidebar-buttons-holder div:nth-child(1) {
                 left: 10px; }
+              body .container .row #sidebar #sidebar-title #sidebar-buttons-holder div:hover {
+                height: 1.5vh; }
               body .container .row #sidebar #sidebar-title #sidebar-buttons-holder div:nth-child(2) {
                 left: 20px; }
+              body .container .row #sidebar #sidebar-title #sidebar-buttons-holder div:hover {
+                height: 1.5vh; }
               body .container .row #sidebar #sidebar-title #sidebar-buttons-holder div:nth-child(3) {
                 left: 30px; }
+              body .container .row #sidebar #sidebar-title #sidebar-buttons-holder div:hover {
+                height: 1.5vh; }
               body .container .row #sidebar #sidebar-title #sidebar-buttons-holder div:nth-child(4) {
                 left: 40px; }
+              body .container .row #sidebar #sidebar-title #sidebar-buttons-holder div:hover {
+                height: 1.5vh; }
               body .container .row #sidebar #sidebar-title #sidebar-buttons-holder div:nth-child(1) {
                 background: #e81f1f; }
               body .container .row #sidebar #sidebar-title #sidebar-buttons-holder div:nth-child(2) {

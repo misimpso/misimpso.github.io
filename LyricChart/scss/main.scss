@@ -124,6 +124,10 @@ $dim-grey-background : rgb(121, 128, 134);
             left: #{($i * 10)}px;
 
         }
+        &:hover {
+
+            height: 1.5vh;
+        }
     }
 }
 
@@ -245,27 +249,29 @@ body {
                         margin: 3% .3em 2.7% 0;
                         font-size: 6vh;
                         line-height: 50%;
-
                         -webkit-text-stroke: 2.3px $dim-grey-secondary;
                     }
 
                     #sidebar-buttons-holder {
 
-                        position: relative;
+                        position: absolute;
+                        transform: rotate(-78deg);
                         
                         div {
 
                             @include transition;
-                            position: absolute;
-                            height: 6vh;
-                            width: 5px;
-                            margin-top:-0.5em;
-                            transform: skew(-13deg);
+                            height: 0.5vh;
+                            width: 10vh;
+                            margin-bottom: 0.5vh;
+                            transition: height 0.5s;
+
 
                             $colors-list: $red-primary $orange-primary $green-primary $blue-primary;
                             @each $current-color in $colors-list {
+
                                 $i: index($colors-list, $current-color);
                                 &:nth-child(#{$i}) {
+                                    
                                     background: $current-color;
                                 }
                             }
