@@ -17,34 +17,41 @@ function make_chart() {
 
     });
 
-    ctx.fillStyle = "white";
+    ctx.fillStyle = "#8c939a";
 
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     
-    ctx.fillStyle = "black";
+    ctx.fillStyle = "#2a2a2e";
     
     if (lyrics_list.length == 1) return;
 
-    const padding = 10;
+    const padding = 13;
     
     const w = (canvas.width - (padding * 2)) / lyrics_list.length;
 
-
     if (padding > 8) {
 
-        /* for(let u = 0; u < 2; u++) {
+        let border_padding = padding - 6;
 
-            ctx.beginPath();
-            ctx.moveTo((padding - 5) + ((canvas.width - (padding * 2)) * u), padding - 5);
-            ctx.lineTo(canvas.width - padding + 5, (padding - 5) + ((canvas.width - (padding * 2)) * u));
-            ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(border_padding - 1, border_padding);
+        ctx.lineTo(border_padding, (canvas.width - border_padding));
+        ctx.stroke();
 
-            ctx.beginPath();
-            ctx.moveTo(padding - 5, padding - 5);
-            ctx.lineTo(padding - 5, canvas.width - padding + 5);
-            ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(canvas.width - border_padding, border_padding);
+        ctx.lineTo(canvas.width - border_padding, canvas.width - border_padding);
+        ctx.stroke();
 
-        } */
+        ctx.beginPath();
+        ctx.moveTo(border_padding - 1, border_padding);
+        ctx.lineTo((canvas.width - border_padding), border_padding);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(border_padding, canvas.width - border_padding);
+        ctx.lineTo(canvas.width - border_padding, canvas.width - border_padding);
+        ctx.stroke();
     }
 
     /*

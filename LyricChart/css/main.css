@@ -85,7 +85,7 @@ textarea {
   src: url("../fonts/Gobold.otf"); }
 
 body {
-  background-color: #798086;
+  background-color: #1d1d1f;
   width: 100vw; }
   body .container {
     padding: 0;
@@ -97,7 +97,8 @@ body {
     body .container .row {
       margin: 0; }
       body .container .row #sidebar {
-        background-color: #37393c;
+        box-shadow: 5px 5px 3px #0000001c;
+        background-color: #2a2a2e;
         padding: 0.3em 0.3em 0.3em 0.3em;
         border-radius: 5px 0 0 5px;
         width: 20vw; }
@@ -105,44 +106,44 @@ body {
           width: 100%; }
         body .container .row #sidebar .btn {
           font-weight: bold;
-          background-color: #37393c; }
+          background-color: #2a2a2e; }
           body .container .row #sidebar .btn.btn-primary {
             color: #42acc7;
             border-color: #42acc7; }
             body .container .row #sidebar .btn.btn-primary:hover {
-              color: #37393c;
+              color: #2a2a2e;
               background-color: #42acc7; }
           body .container .row #sidebar .btn.btn-secondary {
-            border-color: #b1b1b2;
-            color: #b1b1b2; }
+            border-color: #8c939a;
+            color: #8c939a; }
             body .container .row #sidebar .btn.btn-secondary:hover {
-              color: #37393c;
-              background-color: #b1b1b2; }
+              color: #2a2a2e;
+              background-color: #8c939a; }
           body .container .row #sidebar .btn.btn-success {
             border-color: #51c742;
             color: #51c742; }
             body .container .row #sidebar .btn.btn-success:hover {
-              color: #37393c;
+              color: #2a2a2e;
               background-color: #51c742; }
           body .container .row #sidebar .btn.btn-danger {
             border-color: #e81f1f;
             color: #e81f1f; }
             body .container .row #sidebar .btn.btn-danger:hover {
-              color: #37393c;
+              color: #2a2a2e;
               background-color: #e81f1f; }
         body .container .row #sidebar #sidebar-title {
-          border: 2.3px solid #b1b1b2;
+          border: 2.3px solid #8c939a;
           border-radius: 5px 0 0 0;
           margin-bottom: 0.2em;
           clip-path: polygon(0% 0%, 0% 101%, 101% 100%, 100% 0%); }
           body .container .row #sidebar #sidebar-title h3 {
             font-family: Gobold;
-            color: #37393c;
+            color: #2a2a2e;
             text-align: right;
-            margin: 3% .3em 2.7% 0;
+            margin: 0.8vh .3em 0.8vh 0;
             font-size: 6vh;
             line-height: 50%;
-            -webkit-text-stroke: 2.3px #b1b1b2; }
+            -webkit-text-stroke: 2.3px #8c939a; }
           body .container .row #sidebar #sidebar-title #sidebar-buttons-holder {
             position: absolute;
             transform: rotate(-78deg); }
@@ -150,27 +151,8 @@ body {
               height: 0.5vh;
               width: 10vh;
               margin-bottom: 0.5vh;
-              transition: height 0.5s; }
-              body .container .row #sidebar #sidebar-title #sidebar-buttons-holder div:nth-child(0) {
-                left: 0px; }
-              body .container .row #sidebar #sidebar-title #sidebar-buttons-holder div:hover {
-                height: 1.5vh; }
-              body .container .row #sidebar #sidebar-title #sidebar-buttons-holder div:nth-child(1) {
-                left: 10px; }
-              body .container .row #sidebar #sidebar-title #sidebar-buttons-holder div:hover {
-                height: 1.5vh; }
-              body .container .row #sidebar #sidebar-title #sidebar-buttons-holder div:nth-child(2) {
-                left: 20px; }
-              body .container .row #sidebar #sidebar-title #sidebar-buttons-holder div:hover {
-                height: 1.5vh; }
-              body .container .row #sidebar #sidebar-title #sidebar-buttons-holder div:nth-child(3) {
-                left: 30px; }
-              body .container .row #sidebar #sidebar-title #sidebar-buttons-holder div:hover {
-                height: 1.5vh; }
-              body .container .row #sidebar #sidebar-title #sidebar-buttons-holder div:nth-child(4) {
-                left: 40px; }
-              body .container .row #sidebar #sidebar-title #sidebar-buttons-holder div:hover {
-                height: 1.5vh; }
+              transition: padding 0.5s;
+              cursor: pointer; }
               body .container .row #sidebar #sidebar-title #sidebar-buttons-holder div:nth-child(1) {
                 background: #e81f1f; }
               body .container .row #sidebar #sidebar-title #sidebar-buttons-holder div:nth-child(2) {
@@ -179,9 +161,12 @@ body {
                 background: #51c742; }
               body .container .row #sidebar #sidebar-title #sidebar-buttons-holder div:nth-child(4) {
                 background: #42acc7; }
+              body .container .row #sidebar #sidebar-title #sidebar-buttons-holder div:hover {
+                padding: 1vh;
+                cursor: pointer; }
         body .container .row #sidebar #sidebar-content {
           padding: 0.3em;
-          border: 2.3px solid #b1b1b2;
+          border: 2.3px solid #8c939a;
           border-radius: 0 0 5px 5px;
           height: calc(98vh - 3.9em);
           display: flex;
@@ -191,7 +176,7 @@ body {
             font-size: 13px;
             font-style: oblique;
             margin-bottom: 0.3em;
-            color: #c3c3c4; }
+            color: #9fa5ab; }
           body .container .row #sidebar #sidebar-content #lyrics-text {
             width: 100%;
             min-height: 15vh;
@@ -202,8 +187,9 @@ body {
           body .container .row #sidebar #sidebar-content .btn-group {
             margin-bottom: 0.3em; }
       body .container .row #content {
+        box-shadow: 5px 5px 3px #0000001c;
         margin-left: -1px;
-        background-color: #37393c;
+        background-color: #2a2a2e;
         border-radius: 0 5px 5px 0;
         padding: 0.4rem 0.4rem 0.4rem 0.1rem; }
 

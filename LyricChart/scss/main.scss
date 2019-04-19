@@ -105,30 +105,14 @@ $blue-primary: #42acc7;
 
 $blue-secondary: #1f4b7a;
 
-$dim-grey-primary: #37393c;
-$dim-grey-secondary:#b1b1b2;
-$dim-grey-background : rgb(121, 128, 134);
+$dim-grey-primary: #2a2a2e;
+$dim-grey-secondary:#8c939a;
+$dim-grey-background : #1d1d1f;
 
 @font-face { font-family: Gobold; src: url('../fonts/Gobold.otf'); }
 
-@function shade($color, $percentage) {
-    @return mix(black, $color, $percentage);
-  }
-
-@mixin transition {
-
-    @for $i from 0 through 4 {
-        
-        &:nth-child(#{$i}) {
-
-            left: #{($i * 10)}px;
-
-        }
-        &:hover {
-
-            height: 1.5vh;
-        }
-    }
+@mixin drop-shadow {
+    box-shadow: 5px 5px 3px #0000001c;
 }
 
 body {
@@ -151,6 +135,7 @@ body {
 
             #sidebar {
 
+                @include drop-shadow;
                 background-color: $dim-grey-primary;
                 padding: 0.3em 0.3em 0.3em 0.3em;
                 border-radius: 5px 0 0 5px;
@@ -246,7 +231,7 @@ body {
                         font-family: Gobold;
                         color: $dim-grey-primary;
                         text-align: right;
-                        margin: 3% .3em 2.7% 0;
+                        margin: 0.8vh .3em 0.8vh 0;
                         font-size: 6vh;
                         line-height: 50%;
                         -webkit-text-stroke: 2.3px $dim-grey-secondary;
@@ -259,21 +244,26 @@ body {
                         
                         div {
 
-                            @include transition;
                             height: 0.5vh;
                             width: 10vh;
                             margin-bottom: 0.5vh;
-                            transition: height 0.5s;
-
+                            transition: padding 0.5s;
+                            cursor: pointer;
 
                             $colors-list: $red-primary $orange-primary $green-primary $blue-primary;
                             @each $current-color in $colors-list {
 
                                 $i: index($colors-list, $current-color);
                                 &:nth-child(#{$i}) {
-                                    
+
                                     background: $current-color;
                                 }
+                            }
+
+                            &:hover {
+
+                                padding: 1vh;
+                                cursor: pointer;
                             }
                         }
                     }
@@ -323,6 +313,7 @@ body {
 
             #content {
 
+                @include drop-shadow;
                 margin-left: -1px;
                 background-color: $dim-grey-primary;
                 border-radius: 0 5px 5px 0;
