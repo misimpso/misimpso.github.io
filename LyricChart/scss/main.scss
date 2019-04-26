@@ -122,7 +122,6 @@ body {
 
     .container {
 
-        padding: 0;
         max-width: calc(20vw + 100vh);
         position: absolute;
         left: 50%;
@@ -166,6 +165,11 @@ body {
                             background-color: $blue-primary;
 
                         }
+
+                        &:focus {
+
+                            box-shadow: 0 0 0 0.2rem rbga($blue-primary);
+                        }
                     }
 
                     &.btn-secondary {
@@ -182,6 +186,11 @@ body {
                             // Secondary varient
                             background-color: $dim-grey-secondary;
                             
+                        }
+
+                        &:focus {
+
+                            box-shadow: 0 0 0 0.2rem rbga($dim-grey-secondary);
                         }
                     }
 
@@ -200,6 +209,11 @@ body {
                             background-color: $green-primary;
                             
                         }
+
+                        &:focus {
+
+                            box-shadow: 0 0 0 0.2rem rbga($green-primary);
+                        }
                     }
 
                     &.btn-danger {
@@ -215,6 +229,11 @@ body {
 
                             // Danger varient
                             background-color: $red-primary;
+                        }
+
+                        &:focus {
+
+                            box-shadow: 0 0 0 0.2rem rbga($red-primary, .7);
                         }
                     }
                 }

@@ -88,7 +88,6 @@ body {
   background-color: #1d1d1f;
   width: 100vw; }
   body .container {
-    padding: 0;
     max-width: calc(20vw + 100vh);
     position: absolute;
     left: 50%;
@@ -113,24 +112,32 @@ body {
             body .container .row #sidebar .btn.btn-primary:hover {
               color: #2a2a2e;
               background-color: #42acc7; }
+            body .container .row #sidebar .btn.btn-primary:focus {
+              box-shadow: 0 0 0 0.2rem rbga(#42acc7); }
           body .container .row #sidebar .btn.btn-secondary {
             border-color: #8c939a;
             color: #8c939a; }
             body .container .row #sidebar .btn.btn-secondary:hover {
               color: #2a2a2e;
               background-color: #8c939a; }
+            body .container .row #sidebar .btn.btn-secondary:focus {
+              box-shadow: 0 0 0 0.2rem rbga(#8c939a); }
           body .container .row #sidebar .btn.btn-success {
             border-color: #51c742;
             color: #51c742; }
             body .container .row #sidebar .btn.btn-success:hover {
               color: #2a2a2e;
               background-color: #51c742; }
+            body .container .row #sidebar .btn.btn-success:focus {
+              box-shadow: 0 0 0 0.2rem rbga(#51c742); }
           body .container .row #sidebar .btn.btn-danger {
             border-color: #e81f1f;
             color: #e81f1f; }
             body .container .row #sidebar .btn.btn-danger:hover {
               color: #2a2a2e;
               background-color: #e81f1f; }
+            body .container .row #sidebar .btn.btn-danger:focus {
+              box-shadow: 0 0 0 0.2rem rbga(#e81f1f, 0.7); }
         body .container .row #sidebar #sidebar-title {
           border: 2.3px solid #8c939a;
           border-radius: 5px 0 0 0;
