@@ -9,10 +9,8 @@
 
     <link rel="manifest" href="site.webmanifest">
     <link rel="apple-touch-icon" href="icon.png">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <!-- Place favicon.ico in the root directory -->
-
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
 
@@ -26,6 +24,7 @@
 
     <main class="container">
         <div id="nav-bar" class="row">
+            <div></div>
             <div></div>
             <div></div>
             <div></div>
@@ -62,249 +61,86 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="js/lz-string.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
     <script>
     $(document).ready(() => {
         
+        // Get height of canvas container element
         let content_h = $('#content').height() + "px";
         
+        // Create canvas element and set width and height
         $('#content').html($('<canvas id="canvas" width=' + content_h + ' height=' + content_h + '>'));
     
+        // Make the chart!
         make_chart();
         
     });
         
+    // Set up buttons
+
+    // Chartify button
     $('#chart_btn').on('click', make_chart);
-        
+    
+    // Clear button
     $('#clear_btn').on('click', () => { $('#sidebar-content > p').text('Type lyrics in the box below.'); $('textarea').val(''); make_chart(); })
         
+    // Example buttons
     $('.btn-group-vertical > button').on('click', (e) => {
         
+        // Data ID of button
         let e_id = e.target.getAttribute('data-id');
         
+        // Title var
         let ttl = null;
         
+        // Lyric var
         let lyr = null;
         
+        // Populate title and lyrics based on button pressed
         if (e_id == "ex-1") {
             
+            // Example 1
             ttl = "September - Earth, Wind, and Fire";
             
-            lyr = `Do you remember the 21st night of September?
-Love was changing the minds of pretenders
-While chasing the clouds away
-Our hearts were ringing
-In the key that our souls were singing
-As we danced in the night
-Remember how the stars stole the night away
-Hey hey hey
-Ba de ya, say do you remember
-Ba de ya, dancing in September
-Ba de ya, never was a cloudy day
-Ba duda, ba duda, ba duda, badu
-Ba duda, badu, ba duda, badu
-Ba duda, badu, ba duda
-My thoughts are with you
-Holding hands with your heart to see you
-Only blue talk and love
-Remember how we knew love was here to stay
-Now December found the love that we shared in September
-Only blue talk and love
-Remember the true love we share today
-Hey hey hey
-Ba de ya, say do you remember
-Ba de ya, dancing in September
-Ba de ya, never was a cloudy day
-There was a
-Ba de ya, say do you remember
-Ba de ya, dancing in September
-Ba de ya, golden dreams were shinny days
-The bell was ringing
-Our souls were singing
-Do you remember, never a cloudy day
-There was a
-Ba de ya, say do you remember
-Ba de ya, dancing in September
-Ba de ya, never was a cloudy day
-There was a
-Ba de ya, say do you remember
-Ba de ya, dancing in September
-Ba de ya, golden dreams were shinny days
-Ba de ya de ya de ya
-Ba de ya de ya de ya
-Ba de ya de ya de ya de ya
-Ba de ya de ya de ya
-Ba de ya de ya de ya
-Ba de ya de ya de ya de ya`;
+            // Base64 Compressed lyrics
+            lyr = "CIewBAniCuYE4FMC2yBGC5gC4AsFgCYBGAZyzADsBLAcx3JADMwBlBAByzQwH4wAZEADd8AdwCGJMAGMc4ijSoLseMEiUATKUzDtEXChowkAUAHUcVADb5ZkpTRW2rMLWHESIJgPLRMecTgsKVEMfDgHBxMASQonMABrBAgVcQY/MBIYKxCwzMiFEwBBXLANeWkEDTAleOo6LBMAJWRufxBReLJAqTIQGzraendPEwAJZLA8FOmTACFxMvwIcQAaTPEUjXAoWEQUJHQ4ecWjSDWyiocauLZONpOl8/WKBBFMCSlF6RdoDS3No8NH8LqhTiD1mCyhCwGDgUCYXDoJDweUUfCFtC0bDxMCUVjxCYALIpXAwBpfRBgURUXCQGDjfoaa5yQwhWk4ekZAJBbDgEgIZYM7wUKwpVBWaD4LDiKwJdyGMAuETNVqHDBTDrU/AJV6dZViSRTPJYfkyrwAOS1wAQlXVmEYMEVuHwBtS5FCmTkiGqtTuXHtPlF4sl0tl8vk1QNqoOR3iWDgUqVwjE+BI3ulIHKXgmM0ms0xZxW6xImzKOxg8DVRyBywu5Qo0mufo4AZrhbrLzeGs+7hkv3+ly8ABU8FTe4SO88NlsK3tqxha9OG03lC37oGp8WwDQmQg4hpEOIkLkqemlBQARBTKP8OgrFZqUaIgoor5MFloDltWeCjQTKAXJVrGGBdu8fY/K4V4mLe45GpOpydjO5ZAfsDxbvWVxrrcrboYh06vOBE79lBQ4wWOhpfEu26lrOqELscGHrCuzY4Ru7b4duu5WEYB5HieP5ppYFCXkOpgYU8KySQh0myUWMnyXJdbSdRnFqapSnnBpik6XWQA===";
             
         } else if (e_id == "ex-2") {
             
+            // Example 2
             ttl = "Mr. Blue Sky - Electric Light Orchestra"
             
-            lyr = `Sun is shinin' in the sky
-There ain't a cloud in sight
-It's stopped rainin' everybody's in a play
-And don't you know
-It's a beautiful new day, hey hey
-Runnin' down the avenue
-See how the sun shines brightly in the city
-On the streets where once was pity
-Mister blue sky is living here today, hey hey
-Mister blue sky please tell us why
-You had to hide away for so long (so long)
-Where did we go wrong?
-Mister blue sky please tell us why
-You had to hide away for so long (so long)
-Where did we go wrong?
-Hey you with the pretty face
-Welcome to the human race
-A celebration, mister blue sky's up there waitin'
-And today is the day we've waited for
-Oh mister blue sky please tell us why
-You had to hide away for so long (so long)
-Where did we go wrong?
-Hey there mister blue
-We're so pleased to be with you
-Look around see what you do
-Everybody smiles at you
-Hey there mister blue
-We're so pleased to be with you
-Look around see what you do
-Everybody smiles at you
-Mister blue sky, mister blue sky
-Mister blue sky
-Mister blue, you did it right
-But soon comes mister night creepin' over
-Now his hand is on your shoulder
-Never mind I'll remember you this
-I'll remember you this way
-Mister blue sky please tell us why
-You had to hide away for so long (so long)
-Where did we go wrong?
-Hey there mister blue
-We're so pleased to be with you
-Look around see what you do
-Everybody smiles at you
-Mister blue sky`;
+            // Base64 Compressed Lyrics
+            lyr = "MoVwdgBAlgzhMAspmQcmpALggpvA1gJ4BQAKrgE54CGamE1EAxgDYD2IAJhvFAOYJMxAJKZUcGJjYAHaTm4VaKMOhwA3HBUIAjNp0LiejaS2okAgmG6c2K+oQ4R8YNgHcRYuI205qITFAAZiAsEGA4rhCcZgA0ELiE8TgkAErgyug2rli4DBpgIDjEwDh4CG4Q2Hgw4PBI4XDaFPyCLInIlblMUJgkAPI51ZhUOJhwrpR4tkx4rtRw0j0kALKwmJoQ2iyFBO1wLFBqyHxJVJV6sUmJCcSrkhtbOzBEECa+MHjrLKEg4wgkAE1HAhqNwpPEoJwaHNEoE2BR4GwIOwwCcABQwJEovgASmIAHVJlFIRBXHg+EjXBRbHwAPy3NYPbbVF5veafHDfCC/Un/YhAkDxUHnCFQhgwiBwhGY5E0iAYrE0vGEzR4TgkskQCmk6mo+kACWSEAcgtcPQQnTw0iomF6kuoMwJnKYbAAtp8kVV4iBXdRIIpHeZmJycE1qAFbHFXYyEY8WQY4CBpJaznMemhiJYwRc9paomZSThUBpSbR1twpcQ+hbo/dY8zdq8WO8OVyeRNAcDheCkGLqBKpYjZaj5TLscqieruJrtVSaQajVUzrX1vXCk7UGcZWyPtnNrNzcaOMQADJsNj4BjU8DcD6zEH2Rw2YgAUQ0Wl0+ng0ebXkfIGIQ1EiXPAVyZdd8SLLckR3eQRR8UlDxNU9z0vahryseBSl5cMj0FZ8300HQ9ESGAfxwP88IZOtNgbZ5CCjGNaKeIhqNXZj4zY8CcDiE1iW4HoIGaAQhAAIX8RFbGYN0KIgMCERQETmBGRYVAgNh32IAA5CokDgEFMNgdTIBNaVyhCKEKG09QNmjTDhFQLkqHdV0fARPjsFgERHNCZycFcjYPL00sViYuNG1gypOR+P5O0FEE917aEC0HMc5QVYdcQJScNXJSldTpQDFyJeSOI3aCmxbPcELNbAqLPC8rw4TC7xw/8ojYV932Ir8yKgX8GH/Li13jIA==";
             
         } else if (e_id == 'ex-3') {
             
+            // Example 3
             ttl = "This is America - Childish Gambino";
             
-            lyr = `Yeah, yeah, yeah, yeah, yeah
-Yeah, yeah, yeah, go, go away
-Yeah, yeah, yeah, yeah, yeah
-Yeah, yeah, yeah, go, go away
-Yeah, yeah, yeah, yeah, yeah
-Yeah, yeah, yeah, go, go away
-Yeah, yeah, yeah, yeah, yeah
-Yeah, yeah, yeah, go, go away
-We just wanna party
-Party just for you
-We just want the money
-Money just for you
-I know you wanna party
-Party just for me
-Girl, you got me dancin' (yeah, girl, you got me dancin')
-Dance and shake the frame
-We just wanna party (yeah)
-Party just for you (yeah)
-We just want the money (yeah)
-Money just for you (you)
-I know you wanna party (yeah)
-Party just for me (yeah)
-Girl, you got me dancin' (yeah, girl, you got me dancin')
-Dance and shake the frame (you)
-This is America
-Don't catch you slippin' up
-Don't catch you slippin' up
-Look what I'm whippin' up
-This is America (woo)
-Don't catch you slippin' up
-Don't catch you slippin' up
-Look what I'm whippin' up
-This is America (skrrt, skrrt, woo)
-Don't catch you slippin' up (ayy)
-Look at how I'm livin' now
-Police be trippin' now (woo)
-Yeah, this is America (woo, ayy)
-Guns in my area (word, my area)
-I got the strap (ayy, ayy)
-I gotta carry 'em
-Yeah, yeah, I'ma go into this (ugh)
-Yeah, yeah, this is guerilla (woo)
-Yeah, yeah, I'ma go get the bag
-Yeah, yeah, or I'ma get the pad
-Yeah, yeah, I'm so cold like yeah (yeah)
-I'm so dope like yeah (woo)
-We gon' blow like yeah (straight up, uh)
-Ooh-ooh-ooh-ooh-ooh, tell somebody
-You go tell somebody
-Grandma told me
-Get your money, black man (get your money)
-Get your money, black man (get your money)
-Get your money, black man (get your, black man)
-Get your money, black man (get your, black man)
-Black man
-This is America (woo, ayy)
-Don't catch you slippin' up (woo, woo, don't catch you slippin', now)
-Don't catch you slippin' up (ayy, woah)
-Look what I'm whippin' up (Slime!)
-This is America (yeah, yeah)
-Don't catch you slippin' up (woah, ayy)
-Don't catch you slippin' up (ayy, woo)
-Look what I'm whippin' up (ayy)
-Look how I'm geekin' out (hey)
-I'm so fitted (I'm so fitted, woo)
-I'm on Gucci (I'm on Gucci)
-I'm so pretty (yeah, yeah)
-I'm gon' get it (ayy, I'm gon' get it)
-Watch me move (blaow)
-This a celly (ha)
-That's a tool (yeah)
-On my Kodak (woo, Black)
-Ooh, know that (yeah, know that, hold on)
-Get it (get it, get it)
-Ooh, work it (21)
-Hunnid bands, hunnid bands, hunnid bands (hunnid bands)
-Contraband, contraband, contraband (contraband)
-I got the plug on Oaxaca (woah)
-They gonna find you like blocka (blaow)
-Ooh-ooh-ooh-ooh-ooh, tell somebody
-America, I just checked my following list and
-You go tell somebody
-You mothafuckas owe me
-Grandma told me
-Get your money, black man (black man)
-Get your money, black man (black man)
-Get your money, black man (black man)
-Get your money, black man (black man)
-Black man (one, two, three, get down)
-Ooh-ooh-ooh-ooh-ooh, tell somebody
-You go tell somebody
-Grandma told me, "Get your money, " black man
-Get your money, black man (black man)
-Get your money, black man (black man)
-Get your money, black man (black man)
-Black man
-You just a black man in this world
-You just a barcode, ayy
-You just a black man in this world
-Drivin' expensive foreigns, ayy
-You just a big dawg, yeah
-I kenneled him in the backyard
-No proper life to a dog
-For a big dog`;
+            // Base64 Compressed Lyrics
+            lyr = "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";
             
         }
         
+        // Only make the chart if we have lyrics to visualize
         if (lyr !== null) {
+
+            // If an example button was pressed, decompress lyr
+            if (e_id) {
+
+                lyr = LZString.decompressFromBase64(lyr)
+
+            }
             
+            // Set sidebar elements to ttl and lyr values
             $('#sidebar-content > p').text(ttl);
             
             $('textarea').val(lyr);
             
+            // Make the chart!
             make_chart();
             
         }
