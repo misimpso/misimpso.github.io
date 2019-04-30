@@ -1,4 +1,4 @@
-/*! HTML5 Boilerplate v7.1.0 | MIT License | https://html5boilerplate.com/ */
+s/*! HTML5 Boilerplate v7.1.0 | MIT License | https://html5boilerplate.com/ */
 
 /* main.css 1.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
 /*
@@ -122,48 +122,13 @@ body {
 
     .container {
 
-        max-width: calc(15vw + 100vh);
+        max-width: calc(20vw + 100vh);
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
 
-        #nav-bar {
-
-            background-color: $dim-grey-primary;
-            margin: 3vh 0 0.3em 2vh;
-            padding: 4vh 0 0 0;
-            width: 26vw;
-
-            div {
-
-                position: absolute;
-                top: 3vh;
-
-                height: 0.5vh;
-                width: 5vw;
-
-                &:not(:last-child) {
-
-                    margin-right: 0.8vw;
-
-                }
-                $colors-list: $red-primary $orange-primary $green-primary $blue-primary;
-                @each $current-color in $colors-list {
-
-                    $i: index($colors-list, $current-color);
-                    &:nth-child(#{$i}) {
-
-                        background: $current-color;
-
-                        left: calc(0% + #{($i - 1) * 5vw});
-
-                    }
-                }
-            }
-        }
-
-        #subject {
+        .row {
 
             margin: 0;
 
@@ -328,7 +293,7 @@ body {
                     padding: 0.3em;
                     border: 2.3px solid $dim-grey-secondary;
                     border-radius: 0 0 5px 5px;
-                    height: calc(88vh - 3.9em);
+                    height: calc(98vh - 3.9em);
 
                     display: flex;
                     flex-direction: column;
